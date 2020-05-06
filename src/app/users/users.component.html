@@ -1,0 +1,53 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <p >Welcome, {{user}}!</p>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let pro of product">
+                    <td>{{pro.username}}</td>
+                    <td>{{pro.product}}</td>
+                    <td>{{pro.quantity}}</td>
+                    <td>{{pro.description}}</td>
+
+                    <td *ngIf="pro.username!='vibhu'"><button (click)="onDelete(pro.id, pro.product)">delete</button></td>
+                </tr>
+            </tbody>
+        
+        </table>
+    </div>
+    <h3>Add Item</h3>
+    <br>
+    <div class="row" style="display: flex;">
+        <br>
+        <div class="col-md">
+            <input type="text" class="form form-control" placeholder="product" [(ngModel)]="productName">
+        </div>
+        <br>
+        <div class="col-md">
+            <input type="number" class="form form-control" placeholder="quantity" [(ngModel)]="qty">
+        </div>
+        <div class="col-md">
+            <input type="text" class="form form-control" placeholder="Description" [(ngModel)]="description">
+        </div>
+        <div class="col-md">
+            <button class="btn btn-success" (click)="onAdd()">Add item</button>
+        </div>
+    </div>
+    <br>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+

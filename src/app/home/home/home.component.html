@@ -1,0 +1,34 @@
+<br>
+<br>
+<div class="container">
+
+    <div class="row-md" style="display: flex;">
+        <div class="col-md">
+            <h3 class="login">Already a user, Login!</h3>
+            <br>
+            <input type="text" class="form form-control" style="width: 50%;" placeholder="username" [(ngModel)]='userlogin'>
+            <br>
+            <input type="password" class="form form-control" style="width: 50%;" placeholder="password" [(ngModel)]='passlogin'>
+            <br>
+            <button class="btn btn-primary" (click)="loggedIn()">Login!</button>
+            <br>
+            <p *ngIf="notlogged" class="warning">Enter correct credentials!</p>
+        </div>
+        <div class="col-md">
+            <h3 class="register">Join us, if you haven't yet</h3>
+            <br>
+            <input type="text" class="form form-control" style="width: 100%;" placeholder="name" [(ngModel)]="registername">
+            <br>
+            <input type="text" class="form form-control" style="width: 100%;" placeholder="username" [(ngModel)]="registerusername">
+            <br>
+            <input type="password" class="form form-control" style="width: 100%;" placeholder="password (greater than 8 characters)" [(ngModel)]="registerpassword">
+            <br>
+            <button class="btn btn-success" (click)="onRegister()">Register!</button>
+            <br>
+            <p *ngIf="!length">Password less than 8 characters</p>
+            <p *ngIf="usercreated">User created</p>
+            <p *ngIf="duplicate">Try different username</p>
+            <p></p>
+        </div>
+    </div>
+</div> 
